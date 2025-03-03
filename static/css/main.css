@@ -249,16 +249,32 @@ nav a, .dropdown {
     padding: 15px;
     border-radius: 8px;
     border: 1px;
-    line-height: 1.6;
+}
+
+.quiz-form {
+    font-weight: bold;
+    white-space: nowrap; 
+    flex-shrink: 0; 
+    text-align: center;
+}
+
+.quiz-form input {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    flex: 1; 
+    min-width: 0; 
+    max-width: 100%; 
+    text-align: left;
 }
 
 .form-group {
-    display: flex;
-    align-items: center;
-    gap: 5px; 
-    flex-wrap: nowrap; 
-    min-width: 0; 
-    justify-content: center;
+    margin-right: 5px;
+    font-weight: bold;
+    white-space: nowrap; 
+    flex-shrink: 0; 
+    text-align: center;
 }
 
 .form-group label {
