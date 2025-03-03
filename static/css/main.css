@@ -66,11 +66,11 @@ table, th, td {
     top: 50%;
     background-color: #9ac8f3;
     color: white;
-    padding: 7px 15px;
+    padding: 8px 16px;
     border: none;
-    border-radius: 10px;
+    border-radius: 4px;
     cursor: pointer;
-    font-size: 13px;
+    font-size: 14px;
     transition: background-color 0.3s;
 }
 
@@ -280,4 +280,51 @@ nav a, .dropdown {
 .search-form .button:hover,
 .add-form .button:hover {
     background-color: #5696d1; 
+}
+
+.flashcard {
+    max-width: 40%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.question-content {
+    margin: 20px 0;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.flashcard p {
+    margin: 20px 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.flashcard-button {
+    background-color: #9ac8f3; /* Light blue from your screenshot */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s, transform 0.1s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.flashcard-button:hover {
+    background-color: #4996df; /* Darker blue on hover */
+    transform: translateY(-2px);
+}
+
+.button-row {
+    display: flex;
+    justify-content: center; /* Center buttons horizontally */
+    gap: 10px; /* Space between buttons in each row */
+    margin: 10px 0; /* Space between rows */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
