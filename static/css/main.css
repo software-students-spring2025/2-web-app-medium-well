@@ -3,6 +3,9 @@
     width: 80%;
     margin: 20px auto;
     font-family: Helvetica, sans-serif;
+    border-radius: 8px;
+    overflow: hidden; /* Keep this to maintain border-radius */
+    max-width: 100%;
 }
 
 .table-container table {
@@ -42,6 +45,21 @@
 .table-container th:nth-child(5),
 .table-container td:nth-child(5) {
     width: 80px; /* Narrower Difficulty column */
+}
+
+@media screen and (max-width: 600px) {
+    .table-container {
+        overflow-x: auto;
+        display: block;
+        width: 90%; /* Keep consistent width */
+        border: none; /* Explicitly remove border */
+        border-radius: 8px;
+    }
+    
+    .table-container table {
+        min-width: 600px; /* Force table to be at least this wide */
+        border: none; /* Remove border */
+    }
 }
 
 .center-wrapper{
