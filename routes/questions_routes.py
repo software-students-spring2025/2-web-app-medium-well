@@ -43,7 +43,7 @@ def add_question():
         }
         questions_collection.insert_one(question)
 
-        return redirect(url_for('questions.add_question'))
+        return redirect(url_for('questions.show_question'))
 
     return render_template('add_question.html')
 
@@ -150,7 +150,7 @@ def edit(q_id):
     if question_to_show is None:
         print(q_id)
         flash("Question not found!", "error")
-        return redirect(url_for("questions.show_question"))
+        return redirect(url_for("questions.search"))
     if request.method == 'POST':
         question_text    = request.form.get( 'question'   )
         answer_text      = request.form.get( 'answer'     )
@@ -170,7 +170,7 @@ def edit(q_id):
             {'_id': ObjectId(q_id)},
             newvalues
             )
-        return redirect(url_for("questions.show_question"))
+        return redirect(url_for("questions.search"))
     return render_template("question_edit.html", question = question_to_show)
 
 @questions_bp.route('/toggle_bookmark/<q_id>', methods=['GET'])
