@@ -36,7 +36,7 @@ git clone https://github.com/software-students-spring2025/2-web-app-medium-well.
 cd 2-web-app-medium-well
 ```
 
-#### **2. Create a `.env` file **
+#### 2. **Create a .env file**
 -  An example file named `env.example` is given. Copy this into a file named `.env`.
 -  Go to discord chat channel `team-mediumwell`, find values of `MONGO_DBNAME`, `MONGO_URI`, and `SECRET_KEY`
 -  Edit these three values in `.env` while leaving the remaining values unchanged.
