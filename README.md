@@ -46,12 +46,17 @@ pip3 install pipenv
 ```
 pipenv shell
 ```
+- To install the dependencies into the currently-active virtual environment:
+```
+pip3 install -r requirements.txt
+```
+
 #### **3. Run the app**
 ```
 python3 main.py
 ```
 #### **4. View the App**
-- Open your browser and navigate to http://localhost:5000
+- Running the app will output an address at which the app is running locally. Visit that address in a web browser.
 
 
 ## Task boards
