@@ -14,7 +14,7 @@
         <table id="data" class="table-container">
             <thead>
                 <tr>
-                    <th></th>
+                    <th><input type="checkbox" id="select-all"></th>
                     <th>Question</th>
                     <th>Answer</th>
                     <th>Hint</th>
@@ -47,6 +47,12 @@
             <button style="text-align: center;" type="submit" class="button">Delete!</button>
         </div>
     </form>
+    <script>
+        document.getElementById("select-all").addEventListener("change", function() {
+            let checkboxes = document.querySelectorAll("input[name='selected']");
+            checkboxes.forEach(checkbox => checkbox.checked = this.checked);
+        });
+    </script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const alerts = document.querySelectorAll(".alert");
