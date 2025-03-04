@@ -9,12 +9,10 @@
     <!-- Bookmark Button -->
     {% if not submitted %}
         <p>
-            <a href="{{ url_for('questions.toggle_bookmark', q_id=question._id) }}" style="text-decoration: none;">
-                <button type="button" style="cursor:pointer;">
-                    {% if question.bookmarked %}★{% else %}☆{% endif %}
-                </button>
-            </a>
-        </p>
+            <button type="button" style="cursor:pointer;" onclick="toggleBookmark('{{ question._id }}', this)">
+                {% if question.bookmarked %}★{% else %}☆{% endif %}
+            </button>
+        </p>      
     {% endif %}
 
     <!-- Answer -->
@@ -59,6 +57,17 @@
             document.getElementById("hint").style.display = "block";
         }
     </script>
+
+    <script>
+        function toggleBookmark(questionId, button) {
+            fetch(`/question/toggle_bookmark/${questionId}`, {
+                method: "GET"
+            })
+            .then(response => response.json())
+            .then(data => {button.innerHTML = data.bookmarked ? "★" : "☆";})
+        }
+    </script>        
+              
     
 {% else %}
     <h2>🎉 Quiz Complete! 🎉</h2>

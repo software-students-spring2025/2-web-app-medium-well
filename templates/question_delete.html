@@ -33,11 +33,9 @@
                     <td>{{ question.genre }}</td>
                     <td>{{ question.difficulty }}</td>
                     <td>
-                        <a href="{{ url_for('questions.toggle_bookmark', q_id=question._id) }}" style="text-decoration: none;">
-                            <button type="button" style="cursor:pointer;">
-                                {% if question.bookmarked %}★{% else %}☆{% endif %}
-                            </button>
-                        </a>
+                        <button type="button" style="cursor:pointer;" onclick="toggleBookmark('{{ question._id }}', this)">
+                            {% if question.bookmarked %}★{% else %}☆{% endif %}
+                        </button>
                     </td>
                 </tr>
                 {% endfor %}
@@ -62,4 +60,19 @@
             });
         });
     </script>
+    <script>
+        function toggleBookmark(questionId, button) {
+            fetch(`/question/toggle_bookmark/${questionId}`, {
+                method: "GET"
+            })
+            .then(response => response.json())  
+            .then(data => {
+                if (data.bookmarked) {
+                    button.innerHTML = "★";
+                } else {
+                    button.innerHTML = "☆";
+                }
+            })
+        }
+    </script>    
 {% endblock %}
