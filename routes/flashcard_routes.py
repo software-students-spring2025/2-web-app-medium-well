@@ -20,7 +20,7 @@ if not MONGO_URI:
 
 flashcard_bp = Blueprint('flashcard', __name__)
 
-# NEW: Options route to allow the user to choose the flashcard order.
+# Options route to allow the user to choose the flashcard order.
 @flashcard_bp.route('/options', methods=['GET'])
 def flashcard_options():
     return render_template('flashcard_options.html')  # Create flashcard_options.html accordingly
