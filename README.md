@@ -35,7 +35,13 @@ Before setting up the project, make sure you have the following installed:
 git clone https://github.com/software-students-spring2025/2-web-app-medium-well.git
 cd 2-web-app-medium-well
 ```
-#### **2. Set up a Python virtual environment**
+
+#### **2. Create a `.env` file **
+-  An example file named `env.example` is given. Copy this into a file named `.env`.
+-  Go to discord chat channel `team-mediumwell`, find values of `MONGO_DBNAME`, `MONGO_URI`, and `SECRET_KEY`
+-  Edit these three values in `.env` while leaving the remaining values unchanged.
+
+#### **3. Set up a Python virtual environment**
 - Install `pipenv` using `pip`:
 ```
 pip3 install pipenv
@@ -51,11 +57,11 @@ pipenv shell
 pip3 install -r requirements.txt
 ```
 
-#### **3. Run the app**
+#### **4. Run the app**
 ```
 python3 main.py
 ```
-#### **4. View the App**
+#### **5. View the App**
 - Running the app will output an address at which the app is running locally. Visit that address in a web browser.
 
 
