@@ -20,7 +20,7 @@ def reset_quiz_session():
     Reset session['visited_quiz'] when navigating away from /quiz
     Used to reset statistics like total_question_answered
     """
-    if request.path.startswith('/static/'):
+    if request.path.startswith('/static/') or request.path.startswith('/question/toggle_bookmark'):
         return
     
     session.setdefault('visited_quiz', False)

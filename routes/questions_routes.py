@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, redirect, url_for, flash, session
+from flask import Blueprint, render_template, request, redirect, url_for, flash, session, jsonify
 from pymongo import MongoClient
 from bson.objectid import ObjectId
 import os
@@ -183,4 +183,4 @@ def toggle_bookmark(q_id):
         {"$set": {"bookmarked": new_bookmarked_status}}
     )
 
-    return redirect(request.referrer or url_for("questions.show_question"))
+    return jsonify({"bookmarked": new_bookmarked_status})
