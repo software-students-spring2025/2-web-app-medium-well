@@ -15,7 +15,7 @@
     <!-- Hint section: hidden by default using the .hint class -->
     <div class="hint" id="hint">
         <h3>Hint:</h3>
-        <p>{{ question.hint }}</p>
+        <p>{{ question.hint if question.hint else "No hint available" }}</p>
     </div>
     <!-- Answer section: The answer is hidden by default -->
     <div id="answer" class="answer">
